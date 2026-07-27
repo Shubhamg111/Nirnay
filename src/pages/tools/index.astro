@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const tools = [
+  {
+    href: '/tools/sip-calculator',
+    name: 'SIP calculator',
+    description: 'Estimate the maturity value of a monthly mutual fund or NEPSE investment plan.',
+  },
+  {
+    href: '/tools/lumpsum-calculator',
+    name: 'Lumpsum growth calculator',
+    description: 'Project how a one-time investment plus optional monthly top-ups could grow.',
+  },
+  {
+    href: '/tools/emi-calculator',
+    name: 'EMI / loan calculator',
+    description: 'Work out your monthly installment and total interest on a home, vehicle, or personal loan.',
+  },
+  {
+    href: '/tools/fd-calculator',
+    name: 'Fixed deposit calculator',
+    description: 'Calculate the maturity value of a bank FD with your choice of compounding frequency.',
+  },
+];
+---
+
+<BaseLayout
+  title="Financial Calculators | Nirnay"
+  description="Free calculators for SIP, lumpsum investing, EMI/loan repayment, and fixed deposits in Nepal."
+>
+  <p class="font-mono text-xs tracking-widest uppercase text-brass mb-3">Tools</p>
+  <h1 class="font-display text-3xl font-semibold mb-2">Calculators</h1>
+  <p class="text-ink/60 mb-10 max-w-xl">
+    Free tools to plan your investments and loans. All estimates are for educational purposes only.
+  </p>
+
+  <div class="grid sm:grid-cols-2 gap-5">
+    {tools.map((tool) => (
+      <a href={tool.href} class="group block bg-paper border border-line rounded-sm p-6 hover:border-brass transition-colors">
+        <h2 class="font-display text-lg font-semibold group-hover:text-brass transition-colors">{tool.name}</h2>
+        <p class="text-ink/60 text-sm mt-2">{tool.description}</p>
+      </a>
+    ))}
+  </div>
+</BaseLayout>

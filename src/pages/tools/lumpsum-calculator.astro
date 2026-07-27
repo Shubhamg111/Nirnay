@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LumpsumCalculator from '../../components/calculators/LumpsumCalculator.jsx';
+---
+
+<BaseLayout
+  title="Lumpsum Growth Calculator | Nirnay"
+  description="Project how a one-time investment plus optional monthly top-ups could grow with compounding."
+>
+  <p class="font-mono text-xs tracking-widest uppercase text-brass mb-3">Tools</p>
+  <h1 class="font-display text-3xl font-semibold mb-2">Lumpsum growth calculator</h1>
+  <p class="text-ink/60 mb-6 max-w-xl">
+    Adjust the numbers below to estimate how a starting amount, plus optional monthly additions, could grow.
+  </p>
+  <LumpsumCalculator client:load />
+</BaseLayout>

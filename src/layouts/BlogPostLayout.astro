@@ -1,0 +1,65 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import ContourDivider from '../components/ContourDivider.astro';
+import { categoryColorClass, SECTIONS, type Section } from '../lib/categories';
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  category: string;
+  section: Section;
+  tags: string[];
+  image?: string;
+}
+
+const { title, description, pubDate, updatedDate, category, section, tags, image } = Astro.props;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  datePublished: pubDate.toISOString(),
+  ...(updatedDate && { dateModified: updatedDate.toISOString() }),
+};
+
+const sectionMeta = SECTIONS[section];
+---
+
+<BaseLayout title={`${title} | Nirnay`} description={description} image={image}>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <article class="max-w-4xl mx-auto">
+    <a href={`/blog/${section}`} class="font-mono text-xs text-ink/50 hover:text-brass transition-colors">
+      ← {sectionMeta.label}
+    </a>
+
+    <div class="mt-6 flex items-center gap-3">
+      <span class={`font-mono text-[11px] tracking-wide uppercase ${categoryColorClass(category)}`}>
+        {category}
+      </span>
+      <span class="text-line">·</span>
+      <time class="font-mono text-xs text-ink/50">
+        {pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+      </time>
+    </div>
+
+    <h1 class="font-display text-3xl sm:text-4xl font-semibold mt-3 mb-8 leading-tight">{title}</h1>
+
+    <ContourDivider />
+
+    <div class="prose-article mt-8">
+      <slot />
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-line flex flex-wrap gap-2">
+      {tags.map((tag) => (
+        <span class="font-mono text-[11px] text-ink/50 bg-mist border border-line rounded-full px-3 py-1">
+          {tag}
+        </span>
+      ))}
+    </div>
+  </article>
+</BaseLayout>

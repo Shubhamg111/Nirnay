@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #EEF2EF;
+  color: #16211C;
+  font-family: 'Work Sans', system-ui, -apple-system, sans-serif;
+}
+
+.font-display {
+  font-family: 'Spectral', serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Reading-focused article typography */
+.prose-article {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.prose-article h2 {
+  font-family: 'Spectral', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  color: #16211C;
+}
+
+.prose-article h3 {
+  font-family: 'Spectral', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose-article p {
+  margin-bottom: 1.15rem;
+}
+
+.prose-article ul,
+.prose-article ol {
+  margin-bottom: 1.15rem;
+  padding-left: 1.5rem;
+}
+
+.prose-article li {
+  margin-bottom: 0.4rem;
+}
+
+.prose-article ul {
+  list-style: none;
+  padding-left: 0.25rem;
+}
+
+.prose-article ul li {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.prose-article ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  background-color: #A9812E;
+  border-radius: 50%;
+}
+
+.prose-article ol {
+  counter-reset: step;
+  list-style: none;
+  padding-left: 0.25rem;
+}
+
+.prose-article ol li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.prose-article ol li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  width: 1.4rem;
+  height: 1.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #16211C;
+  color: #EEF2EF;
+  border-radius: 50%;
+}
+
+.prose-article hr {
+  border: none;
+  border-top: 1px solid #C7CFC7;
+  margin: 2rem 0;
+}
+
+.prose-article em {
+  color: #4A564E;
+}
+
+.prose-article strong {
+  font-weight: 600;
+  color: #16211C;
+}

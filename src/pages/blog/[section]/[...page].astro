@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Pagination from '../../../components/Pagination.astro';
+import { getCollection } from 'astro:content';
+import { SECTIONS, categoryColorClass, POSTS_PER_PAGE, type Section } from '../../../lib/categories';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const sections = Object.keys(SECTIONS) as Section[];
+  const paths = [];
+
+  for (const section of sections) {
+    const posts = (await getCollection('blog', ({ data }) => !data.draft && data.section === section))
+      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+    paths.push(...paginate(posts, { params: { section }, pageSize: POSTS_PER_PAGE }));
+  }
+
+  return paths;
+}) satisfies GetStaticPaths;
+
+const { section } = Astro.params as { section: Section };
+const { page } = Astro.props;
+const meta = SECTIONS[section];
+---
+
+<BaseLayout
+  title={`${meta.label} | Nirnay`}
+  description={`All ${meta.label.toLowerCase()} posts on Nirnay.`}
+>
+  <p class={`font-mono text-xs tracking-widest uppercase ${meta.color} mb-3`}>Section</p>
+  <h1 class="font-display text-3xl font-semibold mb-10">{meta.label}</h1>
+
+  {page.data.length === 0 && (
+    <p class="text-ink/60">No posts here yet — check back soon.</p>
+  )}
+
+  <div class="grid sm:grid-cols-2 gap-5">
+    {page.data.map((post) => (
+      <a href={`/blog/${section}/${post.slug}`} class="group block bg-paper border border-line rounded-sm p-5 hover:border-current transition-colors">
+        <div class="flex items-center justify-between">
+          <span class={`font-mono text-[11px] tracking-wide uppercase ${categoryColorClass(post.data.category)}`}>
+            {post.data.category}
+          </span>
+          <span class="font-mono text-[11px] text-ink/40">
+            {post.data.pubDate.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+          </span>
+        </div>
+        <h2 class="font-display text-lg font-semibold mt-2 leading-snug">{post.data.title}</h2>
+        <p class="text-ink/60 text-sm mt-2">{post.data.description}</p>
+      </a>
+    ))}
+  </div>
+
+  <Pagination page={page} />
+</BaseLayout>

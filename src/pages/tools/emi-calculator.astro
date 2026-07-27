@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EmiCalculator from '../../components/calculators/EmiCalculator.jsx';
+---
+
+<BaseLayout
+  title="EMI / Loan Calculator | Nirnay"
+  description="Calculate your monthly EMI and total interest for a home, vehicle, or personal loan."
+>
+  <p class="font-mono text-xs tracking-widest uppercase text-brass mb-3">Tools</p>
+  <h1 class="font-display text-3xl font-semibold mb-2">EMI / loan calculator</h1>
+  <p class="text-ink/60 mb-6 max-w-xl">
+    Work out your monthly installment and see the principal-vs-interest breakdown of a loan.
+  </p>
+  <EmiCalculator client:load />
+</BaseLayout>

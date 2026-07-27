@@ -1,0 +1,106 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  keywords?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  image = '/images/favicon.svg',
+  keywords = 'NEPSE, Nepal stock market, mutual funds Nepal, personal finance Nepal, investing in Nepal, tech Nepal, gadget reviews Nepal',
+  noindex = false,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const siteName = 'Nirnay';
+const authorName = 'Nirnay';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content={authorName} />
+    <meta name="publisher" content={siteName} />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <link rel="icon" href="/logo.png" type="image/x-icon" />
+    <link rel="alternate icon" href="/logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+  </head>
+  <body class="min-h-screen bg-mist text-ink flex flex-col">
+    <header class="border-b border-line bg-mist/95 backdrop-blur sticky top-0 z-10">
+      <nav class="max-w-4xl mx-auto px-6 py-5 flex items-center justify-between">
+        <a href="/" class="font-display text-xl font-semibold tracking-tight flex items-center gap-2">
+          <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M2 16 L7 7 L10 12 L13 5 L18 16 Z" fill="none" stroke="#A9812E" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+          Nirnay
+        </a>
+        <div class="flex items-center gap-5 text-sm font-medium">
+  <details class="relative group" id="blog-menu">
+    <summary class="list-none cursor-pointer hover:text-brass transition-colors flex items-center gap-1 [&::-webkit-details-marker]:hidden">
+      Blog
+      <svg width="10" height="10" viewBox="0 0 10 10" class="mt-0.5 transition-transform group-open:rotate-180" aria-hidden="true">
+        <path d="M1 3 L5 7 L9 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </summary>
+    <div class="absolute right-0 mt-2 w-44 bg-paper border border-line rounded-sm shadow-sm py-1 z-20">
+      <a href="/blog" class="block px-4 py-2 hover:bg-mist transition-colors">All posts</a>
+      <a href="/blog/finance" class="block px-4 py-2 hover:bg-mist hover:text-brass transition-colors">Finance</a>
+      <a href="/blog/tech" class="block px-4 py-2 hover:bg-mist hover:text-pine transition-colors">Tech</a>
+      <a href="/blog/gadgets" class="block px-4 py-2 hover:bg-mist hover:text-crimson transition-colors">Gadgets</a>
+    </div>
+  </details>
+  <a href="/tools" class="hover:text-brass transition-colors">Calculators</a>
+</div>
+      </nav>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 flex-1 w-full">
+      <slot />
+    </main>
+
+    <footer class="border-t border-line mt-24">
+      <div class="max-w-4xl mx-auto px-6 py-10 flex flex-col sm:flex-row justify-between gap-4 text-sm text-ink/60">
+        <p>© {new Date().getFullYear()} Nirnay</p>
+        <p>For educational purposes only.</p>
+      </div>
+    </footer>
+    <script>
+  const menu = document.getElementById('blog-menu') as HTMLDetailsElement | null;
+  if (menu) {
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target as Node)) menu.open = false;
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') menu.open = false;
+    });
+  }
+</script>
+  </body>
+</html>

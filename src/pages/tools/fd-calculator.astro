@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FdCalculator from '../../components/calculators/FdCalculator.jsx';
+---
+
+<BaseLayout
+  title="Fixed Deposit Calculator | Nirnay"
+  description="Calculate the maturity value of a fixed deposit with your choice of compounding frequency."
+>
+  <p class="font-mono text-xs tracking-widest uppercase text-brass mb-3">Tools</p>
+  <h1 class="font-display text-3xl font-semibold mb-2">Fixed deposit calculator</h1>
+  <p class="text-ink/60 mb-6 max-w-xl">
+    Estimate how much a bank fixed deposit will be worth at maturity.
+  </p>
+  <FdCalculator client:load />
+</BaseLayout>
