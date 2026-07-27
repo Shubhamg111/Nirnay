@@ -5,6 +5,6 @@ import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 
 export default defineConfig({
-  site: 'https://nirnay.vercel.app',
-  integrations: [react(), tailwind(), mdx()],
+  site: 'https://nirnayblogs.vercel.app',
+  integrations: [react(), tailwind(), mdx(), sitemap()],
 });
