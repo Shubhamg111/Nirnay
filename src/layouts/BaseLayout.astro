@@ -17,7 +17,9 @@ const {
   noindex = false,
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const site = Astro.site ?? new URL("https://nirnay.vercel.app");
+const canonicalURL = new URL(Astro.url.pathname, site);
 const siteName = 'Nirnay';
 const authorName = 'Nirnay';
 ---
@@ -46,7 +48,7 @@ const authorName = 'Nirnay';
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta property="og:image" content={new URL(image, site).toString()} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
