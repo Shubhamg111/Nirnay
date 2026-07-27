@@ -6,5 +6,5 @@ import mdx from '@astrojs/mdx';
 
 export default defineConfig({
   site: 'https://nirnay.vercel.app',
-  integrations: [react(), tailwind(), sitemap(), mdx()],
+  integrations: [react(), tailwind(), mdx()],
 });
