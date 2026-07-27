@@ -6,6 +6,6 @@ import mdx from '@astrojs/mdx';
 
 export default defineConfig({
   // Change this to your real domain before deploying — required for sitemap + SEO tags
-  site: 'https://your-domain.com',
+  site: 'https://nirnay.vercel.app',
   integrations: [react(), tailwind(), sitemap(), mdx()],
 });
