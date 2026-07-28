@@ -1,74 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://nirnayblogs.vercel.app/</loc>
-    <lastmod>2026-07-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+       <loc>https://nirnayblogs.vercel.app/</loc>
+       <lastmod>2026-07-28T06:16:08+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>1.0000</priority>
   </url>
-
   <url>
-    <loc>https://nirnayblogs.vercel.app/blog</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+       <loc>https://nirnayblogs.vercel.app/blog/</loc>
+       <lastmod>2026-07-28T06:16:08+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
-
   <url>
-    <loc>https://nirnayblogs.vercel.app/blog/finance</loc>
+       <loc>https://nirnayblogs.vercel.app/blog/finance/</loc>
+       <lastmod>2026-07-28T06:16:08+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
-
   <url>
-    <loc>https://nirnayblogs.vercel.app/blog/tech</loc>
+       <loc>https://nirnayblogs.vercel.app/blog/tech/</loc>
+       <lastmod>2026-07-28T06:16:08+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
-
   <url>
-    <loc>https://nirnayblogs.vercel.app/blog/gadgets</loc>
+       <loc>https://nirnayblogs.vercel.app/blog/gadgets/</loc>
+       <lastmod>2026-07-28T06:16:08+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
-
   <url>
-    <loc>https://nirnayblogs.vercel.app/tools</loc>
+       <loc>https://nirnayblogs.vercel.app/tools/</loc>
+       <lastmod>2026-07-28T06:16:08+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
-
   <url>
-    <loc>https://nirnayblogs.vercel.app/tools/sip-calculator</loc>
+       <loc>https://nirnayblogs.vercel.app/blog/tech/best-ai-tools-for-productivity-2026/</loc>
+       <lastmod>2026-07-26T00:00:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
-
   <url>
-    <loc>https://nirnayblogs.vercel.app/tools/emi-calculator</loc>
+       <loc>https://nirnayblogs.vercel.app/blog/gadgets/budget-smartphone-buying-guide-nepal/</loc>
+       <lastmod>2026-07-26T00:00:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
-
   <url>
-    <loc>https://nirnayblogs.vercel.app/tools/fd-calculator</loc>
+       <loc>https://nirnayblogs.vercel.app/blog/finance/nepse-stocks-vs-mutual-funds/</loc>
+       <lastmod>2026-07-26T00:00:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
-
   <url>
-    <loc>https://nirnayblogs.vercel.app/tools/lumpsum-calculator</loc>
+       <loc>https://nirnayblogs.vercel.app/blog/tech/10x-developer-myth/</loc>
+       <lastmod>2026-07-28T00:00:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
-
   <url>
-    <loc>https://nirnayblogs.vercel.app/blog/finance/how-to-open-demat-account-nepal</loc>
+       <loc>https://nirnayblogs.vercel.app/blog/finance/real-estate-vs-nepse-investing/</loc>
+       <lastmod>2026-07-22T00:00:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
-
   <url>
-    <loc>https://nirnayblogs.vercel.app/blog/finance/nepse-stocks-vs-mutual-funds</loc>
+       <loc>https://nirnayblogs.vercel.app/blog/finance/how-to-open-demat-account-nepal/</loc>
+       <lastmod>2026-07-21T00:00:00+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.6400</priority>
   </url>
-
   <url>
-    <loc>https://nirnayblogs.vercel.app/blog/finance/real-estate-vs-nepse-investing</loc>
+       <loc>https://nirnayblogs.vercel.app/tools/sip-calculator/</loc>
+       <lastmod>2026-07-28T06:16:08+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
   </url>
-
   <url>
-    <loc>https://nirnayblogs.vercel.app/blog/tech/best-ai-tools-for-productivity-2026</loc>
+       <loc>https://nirnayblogs.vercel.app/tools/lumpsum-calculator/</loc>
+       <lastmod>2026-07-28T06:16:08+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
   </url>
-
   <url>
-    <loc>https://nirnayblogs.vercel.app/blog/gadgets/budget-smartphone-buying-guide-nepal</loc>
+       <loc>https://nirnayblogs.vercel.app/tools/emi-calculator/</loc>
+       <lastmod>2026-07-28T06:16:08+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
   </url>
-
   <url>
-    <loc>https://nirnayblogs.vercel.app/blog/tech/10x-developer-myth</loc>
+       <loc>https://nirnayblogs.vercel.app/tools/fd-calculator/</loc>
+       <lastmod>2026-07-28T06:16:08+00:00</lastmod>
+       <changefreq>daily</changefreq>
+       <priority>0.5120</priority>
   </url>
-
 </urlset>
